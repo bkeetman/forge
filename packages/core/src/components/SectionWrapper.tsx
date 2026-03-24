@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 type SectionWrapperProps = {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function SectionWrapper({ title, children }: SectionWrapperProps) {
