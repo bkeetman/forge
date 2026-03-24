@@ -6,3 +6,4 @@ export { SectionWrapper } from "./components/SectionWrapper";
 export type { SectionWrapperProps } from "./components/SectionWrapper";
 export { Toolbar } from "./components/Toolbar";
 export type { ToolbarProps } from "./components/Toolbar";
+export { DesignSystemPreview } from "./components/DesignSystemPreview";
