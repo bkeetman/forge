@@ -3,3 +3,7 @@ dist
 .next
 *.tsbuildinfo
 .turbo
+.DS_Store
+.env*
+.vscode/
+.idea/

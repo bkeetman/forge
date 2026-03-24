@@ -6,5 +6,5 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
-  external: ["react", "react-dom", "next"],
+  external: ["react", "react-dom", "next", "@site-foundry/core"],
 });
