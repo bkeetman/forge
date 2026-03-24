@@ -1,9 +1,9 @@
 "use client";
 
-export * from "@site-foundry/core";
-
 import { DesignSystemPreview } from "@site-foundry/core";
 import type { DesignSystemConfig } from "@site-foundry/core";
+
+export * from "@site-foundry/core";
 
 /**
  * Creates a Next.js page component pre-configured with a design system preview.
