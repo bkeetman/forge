@@ -1,7 +1,7 @@
 "use client";
 
-import { DesignSystemPreview } from "@site-foundry/core";
-import type { DesignSystemConfig } from "@site-foundry/core";
+import { DesignSystemPreview } from "@forge/core";
+import type { DesignSystemConfig } from "@forge/core";
 
 // Re-export named types from core (wildcard re-exports are unsupported in Next.js client boundaries)
 export type {
@@ -12,8 +12,8 @@ export type {
   SectionProps,
   SectionWrapperProps,
   ToolbarProps,
-} from "@site-foundry/core";
-export { SectionWrapper, Toolbar, DesignSystemPreview } from "@site-foundry/core";
+} from "@forge/core";
+export { SectionWrapper, Toolbar, DesignSystemPreview } from "@forge/core";
 
 /**
  * Creates a Next.js page component pre-configured with a design system preview.
@@ -21,7 +21,7 @@ export { SectionWrapper, Toolbar, DesignSystemPreview } from "@site-foundry/core
  * Usage:
  * ```tsx
  * // app/design-system/page.tsx
- * import { createDesignSystemPage } from "@site-foundry/next";
+ * import { createDesignSystemPage } from "@forge/next";
  * export default createDesignSystemPage({ title: "My UI" });
  * ```
  */

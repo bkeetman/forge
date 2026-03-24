@@ -1,6 +1,6 @@
 "use client";
 
-import { createDesignSystemPage } from "@site-foundry/next";
+import { createDesignSystemPage } from "@forge/next";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { Card } from "../../components/Card";

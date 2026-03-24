@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Site Foundry Example",
+  title: "Forge Example",
   description: "Design system preview",
 };
 

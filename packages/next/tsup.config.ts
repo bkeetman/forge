@@ -6,7 +6,7 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
-  external: ["react", "react-dom", "next", "@site-foundry/core"],
+  external: ["react", "react-dom", "next", "@forge/core"],
   banner: {
     js: '"use client";',
   },

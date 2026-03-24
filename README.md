@@ -1,4 +1,4 @@
-# Site Foundry
+# Forge
 
 A reusable design system preview page for Next.js + Tailwind projects.
 
@@ -8,17 +8,17 @@ Drop it into any route to instantly visualize your design tokens, validate UI co
 
 | Package | Description |
 |---------|-------------|
-| `@site-foundry/core` | Framework-agnostic React components |
-| `@site-foundry/next` | Next.js adapter with `createDesignSystemPage` |
+| `@forge/core` | Framework-agnostic React components |
+| `@forge/next` | Next.js adapter with `createDesignSystemPage` |
 
 ## Quick Start
 
 ### Install
 
 ```bash
-npm install @site-foundry/next
+npm install @forge/next
 # or
-pnpm add @site-foundry/next
+pnpm add @forge/next
 ```
 
 ### Add a page
@@ -26,7 +26,7 @@ pnpm add @site-foundry/next
 ```tsx
 // app/design-system/page.tsx
 "use client";
-import { createDesignSystemPage } from "@site-foundry/next";
+import { createDesignSystemPage } from "@forge/next";
 
 export default createDesignSystemPage({
   title: "My Project UI",
@@ -39,7 +39,7 @@ Navigate to `/design-system` and you'll see a live preview of your design tokens
 
 ```tsx
 "use client";
-import { createDesignSystemPage } from "@site-foundry/next";
+import { createDesignSystemPage } from "@forge/next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -58,7 +58,7 @@ Or use the component directly:
 
 ```tsx
 "use client";
-import { DesignSystemPreview } from "@site-foundry/next";
+import { DesignSystemPreview } from "@forge/next";
 
 export default function Page() {
   return <DesignSystemPreview title="My Project UI" />;
@@ -67,14 +67,14 @@ export default function Page() {
 
 ## Tailwind Setup (required)
 
-Site Foundry uses semantic Tailwind tokens. Your project must define them.
+Forge uses semantic Tailwind tokens. Your project must define them.
 
 ### 1. Add the `@source` directive
 
 In your global CSS file, tell Tailwind to scan the package for class names:
 
 ```css
-@source "../node_modules/@site-foundry";
+@source "../node_modules/@forge";
 ```
 
 ### 2. Define the tokens
@@ -82,7 +82,7 @@ In your global CSS file, tell Tailwind to scan the package for class names:
 ```css
 /* globals.css */
 @import "tailwindcss";
-@source "../node_modules/@site-foundry";
+@source "../node_modules/@forge";
 
 @layer base {
   :root {
@@ -192,8 +192,8 @@ Then open `http://localhost:3000/design-system`.
 ```
 foundry/
 ├── packages/
-│   ├── core/          # @site-foundry/core — React components
-│   └── next/          # @site-foundry/next — Next.js adapter
+│   ├── core/          # @forge/core — React components
+│   └── next/          # @forge/next — Next.js adapter
 └── examples/
     └── next-app/      # Example Next.js 15 app
 ```

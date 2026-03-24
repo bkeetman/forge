@@ -17,7 +17,7 @@ importers:
 
   examples/next-app:
     dependencies:
-      '@site-foundry/next':
+      '@forge/next':
         specifier: workspace:*
         version: link:../../packages/next
       next:
@@ -72,7 +72,7 @@ importers:
 
   packages/next:
     dependencies:
-      '@site-foundry/core':
+      '@forge/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
