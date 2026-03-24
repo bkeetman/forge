@@ -12,6 +12,7 @@ const SWATCHES = [
   { bg: "bg-card", label: "Card" },
   { bg: "bg-card-foreground", label: "Card Foreground" },
   { bg: "bg-destructive", label: "Destructive" },
+  { bg: "bg-destructive-foreground", label: "Destructive Foreground" },
 ];
 
 export function ColorsSection(_props: SectionProps) {

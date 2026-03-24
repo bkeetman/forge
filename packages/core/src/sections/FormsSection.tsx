@@ -1,4 +1,3 @@
-import type { InputHTMLAttributes } from "react";
 import { SectionWrapper } from "../components/SectionWrapper";
 import type { SectionProps } from "../types";
 
@@ -6,12 +5,10 @@ function FallbackInput({
   disabled = false,
   placeholder,
   type = "text",
-  ...props
 }: {
   disabled?: boolean;
   placeholder?: string;
   type?: string;
-  [key: string]: unknown;
 }) {
   return (
     <input
@@ -22,7 +19,6 @@ function FallbackInput({
         px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground
         focus:outline-none focus:ring-2 focus:ring-primary
         disabled:cursor-not-allowed disabled:opacity-50"
-      {...(props as InputHTMLAttributes<HTMLInputElement>)}
     />
   );
 }

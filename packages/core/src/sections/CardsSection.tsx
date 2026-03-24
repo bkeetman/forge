@@ -18,9 +18,18 @@ function FallbackBadge({ children }: { children: ReactNode }) {
   );
 }
 
+function LocalFallbackButton({ children, className: _className }: { children: ReactNode; className?: string }) {
+  return (
+    <button className="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
+      {children}
+    </button>
+  );
+}
+
 export function CardsSection({ components }: SectionProps) {
   const CardComponent = components.Card ?? FallbackCard;
   const BadgeComponent = components.Badge ?? FallbackBadge;
+  const ButtonComponent = components.Button ?? LocalFallbackButton;
   return (
     <SectionWrapper title="Cards">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -40,9 +49,7 @@ export function CardsSection({ components }: SectionProps) {
         <CardComponent>
           <h3 className="text-lg font-semibold text-card-foreground mb-2">With Action</h3>
           <p className="text-sm text-muted-foreground mb-4">Card with a call-to-action button at the bottom.</p>
-          <button className="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
-            Take Action
-          </button>
+          <ButtonComponent className="w-full">Take Action</ButtonComponent>
         </CardComponent>
       </div>
     </SectionWrapper>

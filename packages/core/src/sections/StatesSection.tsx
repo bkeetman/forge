@@ -1,7 +1,17 @@
+import type { ReactNode } from "react";
 import { SectionWrapper } from "../components/SectionWrapper";
 import type { SectionProps } from "../types";
 
-export function StatesSection(_props: SectionProps) {
+function LocalFallbackButton({ children }: { children: ReactNode }) {
+  return (
+    <button className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
+      {children}
+    </button>
+  );
+}
+
+export function StatesSection({ components }: SectionProps) {
+  const ButtonComponent = components.Button ?? LocalFallbackButton;
   return (
     <SectionWrapper title="States">
       <div className="space-y-8">
@@ -20,9 +30,7 @@ export function StatesSection(_props: SectionProps) {
             <div className="mb-4 text-4xl text-muted-foreground">○</div>
             <h3 className="text-lg font-semibold text-foreground mb-2">No items found</h3>
             <p className="text-sm text-muted-foreground mb-6">Get started by creating your first item.</p>
-            <button className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
-              Create Item
-            </button>
+            <ButtonComponent>Create Item</ButtonComponent>
           </div>
         </div>
 
