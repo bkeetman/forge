@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-type SectionWrapperProps = {
+export type SectionWrapperProps = {
   title: string;
   children: ReactNode;
 };

@@ -1,6 +1,6 @@
 import type { ResponsiveSize } from "../types";
 
-type ToolbarProps = {
+export type ToolbarProps = {
   title: string;
   isDark: boolean;
   onDarkToggle: () => void;
@@ -51,7 +51,7 @@ export function Toolbar({
           {showDarkToggle && (
             <button
               onClick={onDarkToggle}
-              className={`${buttonBaseClasses} ${inactiveClasses}`}
+              className={`${buttonBaseClasses} ${isDark ? activeClasses : inactiveClasses}`}
             >
               {isDark ? "Light" : "Dark"}
             </button>
