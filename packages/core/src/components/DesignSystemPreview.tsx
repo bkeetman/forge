@@ -20,28 +20,27 @@ const SECTION_MAP: Record<SectionName, ComponentType<SectionProps>> = {
   states: StatesSection,
 };
 
-export function DesignSystemPreview(config: DesignSystemConfig) {
+const WIDTH_CLASS: Record<ResponsiveSize, string> = {
+  mobile: "max-w-sm",
+  tablet: "max-w-2xl",
+  desktop: "max-w-none",
+};
+
+export function DesignSystemPreview({
+  title = "Design System",
+  sections = DEFAULT_SECTIONS,
+  components = {},
+  options = {},
+}: DesignSystemConfig) {
   const [isDark, setIsDark] = useState(false);
   const [responsiveSize, setResponsiveSize] = useState<ResponsiveSize>("desktop");
 
-  const {
-    title = "Design System",
-    sections = DEFAULT_SECTIONS,
-    components = {},
-    options = {},
-  } = config;
-
   const { darkModeToggle = true, responsivePreview = true } = options;
 
-  const widthClass =
-    responsiveSize === "mobile"
-      ? "max-w-sm"
-      : responsiveSize === "tablet"
-        ? "max-w-2xl"
-        : "max-w-none";
+  const widthClass = WIDTH_CLASS[responsiveSize];
 
   return (
-    <div className={isDark ? "dark" : ""}>
+    <div className={isDark ? "dark" : undefined}>
       <div className="bg-background text-foreground min-h-screen">
         <Toolbar
           title={title}
@@ -55,6 +54,7 @@ export function DesignSystemPreview(config: DesignSystemConfig) {
         <main className={`mx-auto px-6 py-4 ${widthClass}`}>
           {sections.map((name) => {
             const SectionComponent = SECTION_MAP[name];
+            if (!SectionComponent) return null;
             return <SectionComponent key={name} components={components} />;
           })}
         </main>
