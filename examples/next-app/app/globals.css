@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* Scan the hoisted monorepo node_modules for @site-foundry Tailwind classes */
 @source "../../node_modules/@site-foundry";
 
 @layer base {
