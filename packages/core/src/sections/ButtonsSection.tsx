@@ -15,7 +15,7 @@ function FallbackButton({
     default: "bg-primary text-primary-foreground hover:opacity-90",
     outline: "border border-border bg-background text-foreground hover:bg-muted",
     ghost: "bg-transparent text-foreground hover:bg-muted",
-    destructive: "bg-destructive text-white hover:opacity-90",
+    destructive: "bg-destructive text-destructive-foreground hover:opacity-90",
   };
   return (
     <button
