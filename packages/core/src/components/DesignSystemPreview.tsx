@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import type { ComponentType } from "react";
 import type { DesignSystemConfig, SectionName, SectionProps, ResponsiveSize } from "../types";

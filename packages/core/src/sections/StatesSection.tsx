@@ -1,17 +1,9 @@
-import type { ReactNode } from "react";
 import { SectionWrapper } from "../components/SectionWrapper";
+import { FallbackButton } from "../components/internal/FallbackButton";
 import type { SectionProps } from "../types";
 
-function LocalFallbackButton({ children }: { children: ReactNode }) {
-  return (
-    <button className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
-      {children}
-    </button>
-  );
-}
-
 export function StatesSection({ components }: SectionProps) {
-  const ButtonComponent = components.Button ?? LocalFallbackButton;
+  const ButtonComponent = components.Button ?? FallbackButton;
   return (
     <SectionWrapper title="States">
       <div className="space-y-8">

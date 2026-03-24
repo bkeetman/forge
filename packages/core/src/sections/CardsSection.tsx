@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { SectionWrapper } from "../components/SectionWrapper";
+import { FallbackButton } from "../components/internal/FallbackButton";
 import type { SectionProps } from "../types";
 
 function FallbackCard({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -18,18 +19,10 @@ function FallbackBadge({ children }: { children: ReactNode }) {
   );
 }
 
-function LocalFallbackButton({ children, className: _className }: { children: ReactNode; className?: string }) {
-  return (
-    <button className="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
-      {children}
-    </button>
-  );
-}
-
 export function CardsSection({ components }: SectionProps) {
   const CardComponent = components.Card ?? FallbackCard;
   const BadgeComponent = components.Badge ?? FallbackBadge;
-  const ButtonComponent = components.Button ?? LocalFallbackButton;
+  const ButtonComponent = components.Button ?? FallbackButton;
   return (
     <SectionWrapper title="Cards">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">

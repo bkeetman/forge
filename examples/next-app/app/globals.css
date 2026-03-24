@@ -1,6 +1,6 @@
 @import "tailwindcss";
-/* Scan the hoisted monorepo node_modules for @site-foundry Tailwind classes */
-@source "../../node_modules/@site-foundry";
+/* Scan the monorepo root node_modules for @site-foundry Tailwind classes (pnpm hoists workspace deps here) */
+@source "../../../node_modules/@site-foundry";
 
 @layer base {
   :root {
